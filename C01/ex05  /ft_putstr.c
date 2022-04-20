@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 18:05:17 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/18 18:56:31 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/20 16:24:20 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,12 @@ void	ft_putstr(char *str)
 		i++;
 	}
 }
+/*#include <stdio.h>
+int main(void)
+{
+	//ex05
+	printf("ex05\n");
+	char ex05_arr[] = "Hello 42!";
+	ft_putstr(ex05_arr);
+	printf("\n\n");
+}*/

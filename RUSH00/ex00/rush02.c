@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 18:01:00 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/17 20:28:52 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/20 18:10:47 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,17 +46,11 @@ void	print_line(int n, char st_cha, char md_cha, char ed_cha)
 	while (j <= n)
 	{
 		if (j == 1)
-		{
 			ft_putchar(st_cha);
-		}
 		else if (j == n)
-		{
 			ft_putchar(ed_cha);
-		}
 		else
-		{
 			ft_putchar(md_cha);
-		}
 		j++;
 	}
 	write(1, "\n", 1);
