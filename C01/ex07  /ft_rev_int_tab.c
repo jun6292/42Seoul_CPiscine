@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wonjo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/18 19:22:30 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/20 16:29:23 by wonjo            ###   ########.fr       */
+/*   Created: 2022/04/23 11:46:27 by wonjo             #+#    #+#             */
+/*   Updated: 2022/04/23 11:56:56 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 void	ft_rev_int_tab(int *tab, int size)
 {

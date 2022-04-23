@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 14:32:32 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/18 15:11:41 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/20 15:53:18 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,17 @@ void	ft_putnbr(int nb)
 		}
 	}
 }
+
+/*#include <stdio.h>
+int main(void)
+{
+	ft_putnbr(-2147483648);
+	printf("\n");
+	ft_putnbr(3);
+	printf("\n");
+	ft_putnbr(2147483647);
+	printf("\n");
+	ft_putnbr(-42);
+	printf("\n");
+	return (0);
+}*/

@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 14:19:58 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/19 21:47:46 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/20 15:58:14 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,8 @@ void	ft_print_comb2(void)
 		x++;
 	}
 }
-
-int	main(void)
+/*int	main(void)
 {
 	ft_print_comb2();
 	return (0);
-}
+}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_int_tab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wonjo <marvin@42.fr>                       +#+  +:+       +#+        */
+/*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 18:39:37 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/20 16:31:36 by wonjo            ###   ########.fr       */
+/*   Created: 2022/04/23 11:33:03 by wonjo             #+#    #+#             */
+/*   Updated: 2022/04/23 11:36:19 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int	temp;
 
 	i = 0;
 	while (i < size - 1)

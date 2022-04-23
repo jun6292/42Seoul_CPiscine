@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/18 18:03:57 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/20 16:19:18 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/21 22:06:48 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@ void	ft_ultimate_div_mod(int *a, int *b)
 	int	div;
 	int	mod;
 
+	if (*b == 0)
+		return ;
 	div = *a / *b;
 	mod = *a % *b;
 	*a = div;

@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/23 11:53:41 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/23 11:56:35 by wonjo            ###   ########.fr       */
+/*   Created: 2022/04/19 19:59:37 by wonjo             #+#    #+#             */
+/*   Updated: 2022/04/19 21:25:50 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
+	dest[i] = '\0';
+	return (dest);
 }
+
 /*#include <stdio.h>
 #include <string.h>
 int main(void)
 {
-	//ex06//
-	char ex05_arr[] = "Hello 42!";
-	printf("ex06\n");
-	printf("str : %s\n", ex05_arr);
-	printf("strlen : %d\n\n", ft_strlen(ex05_arr));
+	printf("ex00\n");
+    char ex00_src[] = "hello world!";
+	char ex00_dest[20] = "hello world!@#$&^";
+
+
+	strcpy(ex00_dest, ex00_src);
+	printf("strcpy : %s\n\n", ex00_dest);
+
+	printf("%c", ex00_dest[13]);
+	printf("%c", ex00_dest[14]);
+	printf("%c", ex00_dest[15]);
 }*/
