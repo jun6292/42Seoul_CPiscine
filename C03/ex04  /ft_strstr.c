@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/24 13:16:34 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/24 14:14:04 by wonjo            ###   ########.fr       */
+/*   Created: 2022/04/24 13:19:12 by wonjo             #+#    #+#             */
+/*   Updated: 2022/04/24 14:24:21 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	i;
+	int	i;
+	int	j;
 
 	i = 0;
-	if (n == 0)
-		return (0);
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
+	if (to_find[i] == '\0')
+		return (str);
+	while (str[i] != '\0')
+	{
+		j = 0;
+		while (str[i + j] == to_find[j])
+		{
+			if (to_find[j + 1] == '\0')
+				return (&str[i]);
+			j++;
+		}
 		i++;
-	return (s1[i] - s2[i]);
+	}
+	return (0);
 }
