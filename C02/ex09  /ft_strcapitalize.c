@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.kr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:57:24 by wonjo             #+#    #+#             */
-/*   Updated: 2022/04/21 14:34:44 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/04/25 18:31:44 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,3 @@ char	*ft_strcapitalize(char *str)
 	}
 	return (str);
 }
-
-/*#include <stdio.h>
-#include <string.h>
-
-int main(void)
-{
-    char ex09_str[] = "salut, comment tu vas ? 42mots quarante-deux; cinquante+et+un";
-    printf("before str : %s\n", ex09_str);
-	printf("after str : %s\n\n", ft_strcapitalize(ex09_str));
-}*/
