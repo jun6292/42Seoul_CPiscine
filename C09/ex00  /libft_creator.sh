@@ -1,3 +1,3 @@
 gcc -c -Wall -Wextra -Werror *.c
-ar -cr libft.a *.o
+ar r libft.a *.o
 rm *.o

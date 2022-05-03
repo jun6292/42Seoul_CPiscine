@@ -6,20 +6,20 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 22:04:19 by wonjo             #+#    #+#             */
-/*   Updated: 2022/05/01 22:42:55 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/05/03 22:03:09 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	is_sep(char *str, char c)
+int	is_sep(char c, char *sep)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (sep[i])
 	{
-		if (str[i] == c)
+		if (sep[i] == c)
 			return (1);
 		i++;
 	}
@@ -32,12 +32,17 @@ int	wc(char *str, char *charset)
 	int	cnt;
 
 	i = 0;
-	cnt = 1;
+	cnt = 0;
 	while (str[i])
 	{
-		if (is_sep(str[i], charset) && !is_sep(str[i + 1], charset))
+		if (str[i] && !is_sep(str[i], charset))
+		{
 			cnt++;
-		i++;
+			while (str[i] && !is_sep(str[i], charset))
+				i++;
+		}
+		while (str[i] && is_sep(str[i], charset))
+			i++;
 	}
 	return (cnt);
 }
@@ -46,11 +51,14 @@ char	*malloc_word(char *str, char *charset)
 {
 	char	*word;
 	int		i;
-	
+
 	i = 0;
 	while (str[i] && !is_sep(str[i], charset))
 		i++;
 	word = (char *)malloc(sizeof(char) * (i + 1));
+	if (!word)
+		return (NULL);
+	i = 0;
 	while (str[i] && !is_sep(str[i], charset))
 	{
 		word[i] = str[i];
@@ -60,13 +68,13 @@ char	*malloc_word(char *str, char *charset)
 	return (word);
 }
 
-char	**str_split(char *str, char *charset)
+char	**ft_split(char *str, char *charset)
 {
 	char	**result;
 	int		i;
 	int		word_cnt;
 	int		word_arr;
-	
+
 	word_cnt = wc(str, charset);
 	result = (char **)malloc(sizeof(char *) * (word_cnt + 1));
 	if (!result)
@@ -89,7 +97,7 @@ char	**str_split(char *str, char *charset)
 	return (result);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 int main(void)
 {
 	printf("-------ex05-------\n\n");
@@ -123,4 +131,4 @@ int main(void)
 	free(ex05_split1);
     free(ex05_split3);
     free(ex05_split2);
-}
+}*/
