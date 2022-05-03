@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 20:16:27 by wonjo             #+#    #+#             */
-/*   Updated: 2022/05/01 14:48:14 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/05/02 21:05:41 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,17 @@ int	wc(char *str, char *charset)
 	int	cnt;
 
 	i = 0;
-	cnt = 1;
+	cnt = 0;
 	while (str[i])
 	{
-		if (is_sep(str[i], charset) && !is_sep(str[i + 1], charset))
+		if (str[i] && !is_sep(str[i], charset))
+		{
 			cnt++;
-		i++;
+			while (str[i] && !is_sep(str[i], charset))
+				i++;
+		}
+		while (str[i] && is_sep(str[i], charset))
+			i++;
 	}
 	return (cnt);
 }
@@ -51,6 +56,8 @@ char	*malloc_word(char *str, char *charset)
 	while (str[i] && !is_sep(str[i], charset))
 		i++;
 	word = (char *)malloc(sizeof(char) * (i + 1));
+	if (!word)
+		return (NULL);
 	i = 0;
 	while (str[i] && !is_sep(str[i], charset))
 	{

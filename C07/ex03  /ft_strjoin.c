@@ -6,13 +6,13 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/30 17:26:48 by wonjo             #+#    #+#             */
-/*   Updated: 2022/05/01 19:59:51 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/05/03 11:54:53 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
+int	ft_strlen2(char *str)
 {
 	int	i;
 
@@ -48,13 +48,13 @@ int	cal_size(int size, char **strs, char *sep)
 
 	strs_len = 0;
 	if (size == 1)
-		return (ft_strlen(strs[0]) + 1);
+		return (ft_strlen2(strs[0]) + 1);
 	i = 0;
 	while (i < size)
 	{
-		strs_len += ft_strlen(strs[i]);
+		strs_len += ft_strlen2(strs[i]);
 		if (i != size - 1)
-			strs_len += ft_strlen(sep);
+			strs_len += ft_strlen2(sep);
 		i++;
 	}
 	return (strs_len + 1);
@@ -69,20 +69,22 @@ char	*ft_strjoin(int size, char **strs, char *sep)
 	if (size == 0)
 	{
 		result = (char *)malloc(sizeof(char));
-		result = 0;
+		if (!result)
+			return (NULL);
+		*result = '\0';
 		return (result);
 	}
 	strs_len = cal_size(size, strs, sep);
 	result = (char *)malloc(sizeof(char) * (strs_len + 1));
 	if (!result)
 		return (NULL);
-	i = 0;
-	while (i < size)
+	*result = '\0';
+	i = -1;
+	while (++i < size)
 	{
 		result = ft_strcat(result, strs[i]);
 		if (i != size - 1)
 			result = ft_strcat(result, sep);
-		i++;
 	}
 	return (result);
 }

@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 13:10:59 by wonjo             #+#    #+#             */
-/*   Updated: 2022/05/01 21:11:26 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/05/02 21:53:05 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,21 @@ int	ft_strlen(char *str)
 
 int	ft_nbrlen(int nbr, int base_len)
 {
-	int	i;
+	int			i;
+	long long	n;
 
-	i = 1;
-	if (nbr < 0)
+	i = 0;
+	n = nbr;
+	if (n == 0)
+		return (1);
+	if (n < 0)
 	{
-		nbr *= -1;
+		n *= -1;
 		i++;
 	}
-	while (nbr > 0)
+	while (n > 0)
 	{
-		nbr /= base_len;
+		n /= base_len;
 		i++;
 	}
 	return (i);
@@ -42,29 +46,29 @@ int	ft_nbrlen(int nbr, int base_len)
 
 char	*ft_itoa_base(int nbr, char *base)
 {
-	char	*result;
-	int		i;
+	char			*result;
+	unsigned int	i;
+	long long		n;
 
+	n = nbr;
 	i = ft_nbrlen(nbr, ft_strlen(base));
 	result = (char *)malloc(sizeof(char) * (i + 1));
-	if (nbr == -2147483648)
-		return ("-2147483648\0");
-	if (nbr == 0)
+	if (n == 0)
 	{
 		result[0] = base[0];
 		result[1] = '\0';
 		return (result);
 	}
-	if (nbr < 0)
+	result[i] = '\0';
+	if (n < 0)
 	{
 		result[0] = '-';
-		nbr *= -1;
+		n *= -1;
 	}
-	result[i] = '\0';
-	while (nbr > 0)
+	while (n > 0)
 	{
-		result[--i] = base[nbr % ft_strlen(base)];
-		nbr /= ft_strlen(base);
+		result[--i] = base[n % ft_strlen(base)];
+		n /= ft_strlen(base);
 	}
 	return (result);
 }

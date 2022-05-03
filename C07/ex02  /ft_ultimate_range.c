@@ -6,7 +6,7 @@
 /*   By: wonjo <wonjo@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/27 22:12:19 by wonjo             #+#    #+#             */
-/*   Updated: 2022/05/01 13:09:50 by wonjo            ###   ########.fr       */
+/*   Updated: 2022/05/02 15:28:37 by wonjo            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	ft_ultimate_range(int **range, int min, int max)
 	}
 	result = (int *)malloc(sizeof(int) * (max - min));
 	if (result == NULL)
+	{
+		range[0] = NULL;
 		return (-1);
+	}
 	i = 0;
 	while (min < max)
 	{
