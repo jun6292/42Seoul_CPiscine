@@ -1,8 +1,8 @@
 # 42Seoul-C-Piscine
-I won't forget you :
-C00/ex08
-C02/ex12
-C05/ex08
-C07/ex03,ex04,ex05
-C09/ex01
-C11/ex05
+I won't forget you :\n
+C00/ex08\n
+C02/ex12\n
+C05/ex08\n
+C07/ex03,ex04,ex05\n
+C09/ex01\n
+C11/ex05\n
